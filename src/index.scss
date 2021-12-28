@@ -1,0 +1,102 @@
+@import 'primereact/resources/themes/lara-light-blue/theme.css';    //theme
+@import 'primereact/resources/primereact.min.css';                    //core css
+@import 'primeicons/primeicons.css'; 
+
+$primaryColor: #fff;
+$secondaryColor: #A52125;
+
+$primaryHoverColor: #FEC3C4;
+$secondaryHoverColor: #651114;
+
+
+body,html {
+  margin:0;
+}
+
+.button-primary {
+  background-color:$primaryColor;
+  color: $secondaryColor;
+  border: 2px solid $secondaryColor;
+  opacity: 0.8;
+  transition: none;
+  display: flex;
+  justify-content: center;
+  &:enabled:hover {
+    background-color: $primaryHoverColor;
+    border: 2px solid $secondaryColor;
+    color: $secondaryColor;
+    opacity: 0.8 !important;
+  }
+  &:focus {
+    background-color: none;
+    color: none;
+    box-shadow: none;
+  }
+}
+
+.button-primary-active {
+    background-color: $secondaryColor;
+    color: $primaryColor;
+    box-shadow: none;
+}
+
+
+.button-secondary {
+  background-color:$secondaryColor;
+  border: 2px solid $secondaryColor;
+  opacity: 0.8;
+  color: $primaryColor;
+  transition: none;
+  &:enabled:hover {
+    background-color: $secondaryHoverColor;
+    border: 2px solid $secondaryColor;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}
+.pi {
+  font-weight: bold;
+}
+
+.p-button-label{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.p-sidebar-mask {
+  top: 40px;
+  height: calc(100% - 40px);
+  z-index: 1000 !important;
+  width: 279px;
+}
+
+.sidebar-close-icon {
+  color: $secondaryColor;
+  font-size: 14.85px;
+}
+
+.p-tree {
+  border: none !important;
+}
+.p-menubar-start {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+     
+.p-slider-handle{
+  border: 2px solid $secondaryColor !important;
+  &:hover {
+    background: $secondaryColor !important;
+  }
+  &:focus{
+    box-shadow: 0 0 0 0.2rem $primaryHoverColor !important;
+  }
+}
+
+.p-slider .p-slider-range{
+  background: $secondaryColor;
+}
+
