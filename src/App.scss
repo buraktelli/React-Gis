@@ -1,0 +1,29 @@
+.App {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.body {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+
+    .sidebar-closed{
+        visibility: hidden;
+        width: 0;
+        transition: .3s;
+    }
+    
+    .sidebar-opened {
+        width: 336px;
+        visibility: visible;
+        transition: .3s;
+    }
+    .main-content {
+        width: 100%;
+        height: 100%;
+        // background-color: red;
+    }
+}

@@ -1,18 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
-// import todoSlice from "../features/todoSlice";
-// import userSlice from "../features/userSlice";
+import sidebarSlice from "../features/sidebarSlice";
 
 const store = configureStore({
     reducer: {
-        // todos: todoSlice,
-        // user: userSlice
+        sidebar: sidebarSlice,
     }
 })
 
 export default store;
 
-// Reducerdaki slicelarin typelari otomatik olarak toplanir ve tek bir type olarak RootState e doner
 export type RootState = ReturnType<typeof store.getState>
 
 export type AppDispatch = typeof store.dispatch;

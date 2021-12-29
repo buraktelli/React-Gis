@@ -1,34 +1,31 @@
 import React, { useState } from 'react'
+import './Navbar.scss';
 import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
 import { Menubar } from 'primereact/menubar';
 import { InputText } from 'primereact/inputtext';
 import { SelectButton } from 'primereact/selectbutton';
-import './Navbar.scss';
-
+import { Button } from 'primereact/button';
+import { visibleChange } from '../../state/features/sidebarSlice'
+import { useAppDispatch, useAppSelector } from '../../state/store/index'
 
 export default function Navbar() {
-    const [value3, setValue3] = useState(null);
-    const justifyTemplate = (option: any) => {
-        return <i className={option.icon}></i>;
-    }
-    const justifyOptions = [
-        { icon: 'pi pi-align-left', value: 'left' },
-        { icon: 'pi pi-align-right', value: 'Right' },
-        { icon: 'pi pi-align-center', value: 'Center' },
-        { icon: 'pi pi-align-justify', value: 'Justify' }
-    ];
-
+    const sidebarVisibility = useAppSelector((state) => state.sidebar.visibility)
+    const dispatch = useAppDispatch()
 
     const start =
-        <div className='menubar-items'>
-            <SelectButton value={value3} options={justifyOptions} onChange={(e) => setValue3(e.value)} itemTemplate={justifyTemplate} />
+        <div>
+            <Button icon="pi pi-arrow-right" onClick={() => dispatch(visibleChange(!sidebarVisibility))} className="p-mr-2" />
         </div>
 
+
     return (
-        <div>
-            <Menubar start={start} />
+        <div className='menubar'>
+            <div className={`sidebar ${sidebarVisibility ? 'sidebar-opened' : 'sidebar-closed'}`}>
+
+            </div>
+            <Menubar start={start} model={[]} />
         </div>
     )
 }
