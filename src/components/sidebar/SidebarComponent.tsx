@@ -14,7 +14,7 @@ export default function SidebarComponent() {
     const customIcons = (
         <React.Fragment>
             <Button
-                icon="pi pi-arrow-left"
+                icon="pi pi-angle-double-left"
                 onClick={() => dispatch(visibleChange(!visibility))}
             />
         </React.Fragment>

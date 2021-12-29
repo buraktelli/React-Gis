@@ -2,11 +2,23 @@
 @import 'primereact/resources/primereact.min.css';                    //core css
 @import 'primeicons/primeicons.css'; 
 
-$primaryColor: #fff;
-$secondaryColor: #A52125;
+// $primaryColor: #fff;
+// $secondaryColor: #A52125;
 
 $primaryHoverColor: #FEC3C4;
 $secondaryHoverColor: #651114;
+
+$primaryColor: #20202a;
+$primaryLightColor: #2a2c38;
+$secondaryColor: #3e86ff;
+//font renkleri ve background renkleri için kullanılyor
+// $lightColor: #F6F6F6;
+// $lightColor: #30323E;
+$lightBlack: #30323e;
+$lightColor: #d8dbe3;
+$footerColor: #e9eaec;
+$borderColor: #e5e5e5;
+
 
 
 body,html {
@@ -21,5 +33,6 @@ body,html {
 .p-button.p-button-icon-only {
   width: 25px !important;
   height: 25px !important;
+  background-color: $primaryLightColor !important;
 }
 

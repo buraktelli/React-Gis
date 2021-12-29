@@ -10,14 +10,25 @@
     flex-direction: row;
     // padding: 10px 35px;
 
+
+    .start {
+        display: flex;
+        flex-direction: row;
+        .measure-group {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-left: 55px;
+        }
+    }
 }
 .sidebar-closed{
     visibility: hidden;
     width: 0;
-    transition: .3s;
+    transition: .4s;
 }
 .sidebar-opened {
-    width: 275px;
+    min-width: 275px;
     visibility: visible;
     transition: .3s;
 }
@@ -30,4 +41,9 @@
         display: none !important;
     }
 
+}
+.p-menubar {
+    background-color: $primaryColor !important;
+    width: 100% !important;
+    border: none !important;
 }

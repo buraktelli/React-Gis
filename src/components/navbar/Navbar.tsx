@@ -15,17 +15,74 @@ export default function Navbar() {
     const dispatch = useAppDispatch()
 
     const start =
-        <div>
-            <Button icon="pi pi-arrow-right" onClick={() => dispatch(visibleChange(!sidebarVisibility))} className="p-mr-2" />
-        </div>
+        <div className='start'>
+            {
+                !sidebarVisibility ?
+                    <Button
+                        icon="pi pi-angle-double-right"
+                        onClick={() => dispatch(visibleChange(!sidebarVisibility))}
+                        style={{ marginRight: '5px' }}
+                    /> : ''
+            }
+            <div className='measure-group'>
+                <Button
+                    style={{
+                        marginRight: '5px',
+                        backgroundColor: '#2a2c38',
+                        width: '20px',
+                        height: '20px',
+                        display: 'flex',
+                        justifyContent: 'center'
+                    }}
+                >
+                    <img src="icons/measurement.svg" />
+                </Button>
+                <Button
+                    style={{
+                        marginRight: '5px',
+                        backgroundColor: '#2a2c38',
+                        width: '20px',
+                        height: '20px',
+                        display: 'flex',
+                        justifyContent: 'center'
+                    }}
+                >
+                    <img src="icons/measurement.svg" />
+                </Button>
+                <Button
+                    style={{
+                        marginRight: '5px',
+                        backgroundColor: '#2a2c38',
+                        width: '20px',
+                        height: '20px',
+                        display: 'flex',
+                        justifyContent: 'center'
+                    }}
+                >
+                    <img src="icons/measurement.svg" />
+                </Button>
+                <Button
+                    style={{
+                        marginRight: '5px',
+                        backgroundColor: '#2a2c38',
+                        width: '20px',
+                        height: '20px',
+                        display: 'flex',
+                        justifyContent: 'center'
+                    }}
+                >
+                    <img src="icons/measurement.svg" />
+                </Button>
+            </div>
+        </div >
 
 
     return (
         <div className='menubar'>
-            <div className={`sidebar ${sidebarVisibility ? 'sidebar-opened' : 'sidebar-closed'}`}>
+            <div className={`sidebar ${sidebarVisibility ? 'sidebar-opened' : 'sidebar-closed'}`} />
 
-            </div>
             <Menubar start={start} model={[]} />
+
         </div>
     )
 }
