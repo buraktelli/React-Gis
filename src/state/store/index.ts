@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
 import sidebarSlice from "../features/sidebarSlice";
+import tableSlice from "../features/tableSlice";
 
 const store = configureStore({
     reducer: {
         sidebar: sidebarSlice,
+        table: tableSlice,
     }
 })
 

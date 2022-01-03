@@ -13,16 +13,13 @@ function App() {
     <div className="App">
       <Navbar></Navbar>
       <div className='body'>
-
-        <div className={`sidebar ${sidebarVisibility ? 'sidebar-opened' : 'sidebar-closed'}`}>
-          <SidebarComponent ></SidebarComponent>
-
-        </div>
+        {
+          sidebarVisibility ?
+            <SidebarComponent></SidebarComponent> : ''
+        }
         <div className='main-content'>
           <BodyComponent></BodyComponent>
-
         </div>
-
       </div>
     </div>
   );

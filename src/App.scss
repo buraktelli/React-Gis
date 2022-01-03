@@ -9,21 +9,19 @@
     flex-direction: row;
     height: 100%;
     width: 100%;
-
-    .sidebar-closed{
-        visibility: hidden;
-        width: 0;
-        transition: .3s;
-    }
+    // .sidebar-closed{
+    //     visibility: hidden;
+    //     width: 0;
+    //     transition: .3s;
+    // }
     
-    .sidebar-opened {
-        width: 386px;
-        visibility: visible;
-        transition: .3s;
-    }
+    // .sidebar-opened {
+    //     width: 386px;
+    //     visibility: visible;
+    //     transition: .3s;
+    // }
     .main-content {
         width: 100%;
         height: 100%;
-        // background-color: red;
     }
 }

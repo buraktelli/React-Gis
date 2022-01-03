@@ -22,16 +22,16 @@
         }
     }
 }
-.sidebar-closed{
-    visibility: hidden;
-    width: 0;
-    transition: .4s;
-}
-.sidebar-opened {
-    min-width: 275px;
-    visibility: visible;
-    transition: .3s;
-}
+// .sidebar-closed{
+//     visibility: hidden;
+//     width: 0;
+//     transition: .4s;
+// }
+// .sidebar-opened {
+//     min-width: 315px;
+//     visibility: visible;
+//     transition: .3s;
+// }
 @media screen and (max-width: 960px) 
 {
     .p-menubar .p-menubar-button{
