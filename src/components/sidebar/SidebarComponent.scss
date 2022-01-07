@@ -1,3 +1,53 @@
-.p-sidebar-left .p-sidebar {
-    max-width: 336px !important;
-  }
+// .p-sidebar-left .p-sidebar {
+//     max-width: 336px !important;
+
+// }
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+  .sidebar-closed{
+        visibility: hidden;
+        width: 0;
+        transition: .5s;
+    }
+    
+    .sidebar-opened {
+        max-width: 336px;
+        visibility: visible;
+        transition: .5s;
+        overflow-y: auto;
+        overflow-x: auto;
+
+        background-color: #20202a;
+    }
+
+.p-tree-container {
+  max-height: 75 0px;
+  overflow-x: hidden;
+}
+
+.youricon{
+  background-image: url('../../../public/icons/measurement.svg');
+}
+
+.p-tree .p-tree-container .p-treenode .p-treenode-content .p-treenode-icon {
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+  background-color: #20202a;
+}
+.p-tree {
+  background-color: #20202a;
+  border: none
+}
+.p-tree .p-tree-container .p-treenode {
+  color: whitesmoke
+}
+.p-tree .p-tree-container .p-treenode .p-treenode-content{
+  overflow: auto;
+}

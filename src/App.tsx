@@ -13,12 +13,9 @@ function App() {
     <div className="App">
       <Navbar></Navbar>
       <div className='body'>
-        {
-          sidebarVisibility ?
-            <SidebarComponent></SidebarComponent> : ''
-        }
+        <SidebarComponent></SidebarComponent>
         <div className='main-content'>
-          <BodyComponent></BodyComponent>
+        <BodyComponent></BodyComponent>
         </div>
       </div>
     </div>
