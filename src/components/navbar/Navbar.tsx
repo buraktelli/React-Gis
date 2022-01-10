@@ -11,8 +11,12 @@ import { visibleChange } from '../../state/features/sidebarSlice'
 import { tableVisibleChange } from '../../state/features/tableSlice'
 import { useAppDispatch, useAppSelector } from '../../state/store/index'
 import ToolButton from '../../ui-components/ToolButton';
+import { useTranslation } from 'react-i18next';
+import Language from '../util/Language';
 
 export default function Navbar() {
+    const { t } = useTranslation();
+
     const sidebarVisibility = useAppSelector((state) => state.sidebar.visibility)
     const tableVisibility = useAppSelector((state) => state.table.visibility)
     const dispatch = useAppDispatch()
@@ -53,14 +57,16 @@ export default function Navbar() {
                 />
             </div>
         </div >
+    const end =
+        <div>
+            <Language></Language>
+        </div>
 
 
     return (
         <div className='menubar'>
             {/* <div className={`sidebar ${sidebarVisibility ? 'sidebar-opened' : 'sidebar-closed'}`} /> */}
-
-            <Menubar start={start} model={[]} />
-
+            <Menubar start={start} end={end} model={[]} />
         </div>
     )
 }

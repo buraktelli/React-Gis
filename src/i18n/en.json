@@ -1,0 +1,46 @@
+{
+    "BUTTON": {
+        "Layers": "Katmanlar",
+        "Basemaps": "Haritalar",
+        "How Can I Go?": "Nasıl Giderim?",
+        "360° Campus": "360° Kampüs",
+        "3D Campus": "3B Kampüs",
+        "Login": "Giriş Yap",
+        "Logout": "Çıkış Yap",
+        "Share": "Paylaş",
+        "Print": "Yazdır",
+        "Measurement": "Ölçüm"
+    },
+    "SEARCH": {
+        "Quick Search": "Derslik veya yer ara",
+        "Categorical Search": "Kategorik Arama",
+        "No Result": "Kullanılabilir Seçenek Yok"
+    },
+    "SHARE": {
+        "Copy Link": "Bağlantıyı Kopyala",
+        "Share": "Paylaş",
+        "Success Message": "Bağlantı Kopyalandı!",
+        "Error Message": "Bağlantı Kopyalanamadı!"
+    },
+    "SIDEBAR": {
+        "Layers": "Katmanlar",
+        "Open Table": "Tablo aç",
+        "Draw Object": "Obje çiz"
+    },
+    "BASEMAP": {
+        "Standart Maps": "Standart Haritalar",
+        "Custom Maps": "Özel Haritalar"
+    },
+    "POPUP": {
+        "Edit Object Attribute": "Obje Öznitelik Düzenle",
+        "Delete Confirmation": "Silme Onayı",
+        "Are you sure you want to permanently delete this object?": "Bu objeyi kalıcı olarak silmek istediğinize emin misiniz?"
+    },
+    "LOGIN": {
+        "University Information System": "Üniversite Bilgi Sistemi",
+        "Username": "User Name",
+        "Password": "Şifre",
+        "Remember Me": "Beni Hatırla",
+        "Forgot Password": "Şifremi unuttum"
+    }
+}

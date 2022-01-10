@@ -50,10 +50,14 @@
 }
 .p-tree .p-tree-container .p-treenode .p-treenode-content{
   // overflow: auto;
+  height: 30px;
 }
 
 .p-tree .p-tree-container .p-treenode .p-treenode-content:hover{
   // background-color: red !important
+}
+.p-tree .p-tree-container .p-treenode .p-treenode-content.p-highlight {
+  width: fit-content;
 }
 .p-tree .p-tree-container .p-treenode .p-treenode-content.p-treenode-selectable:not(.p-highlight):hover {
   width: fit-content;
