@@ -27,10 +27,10 @@
 
 .p-tree-container {
   max-height: 75 0px;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
-.youricon{
+.youricon {
   background-image: url('../../../public/icons/measurement.svg');
 }
 
@@ -49,5 +49,12 @@
   color: whitesmoke
 }
 .p-tree .p-tree-container .p-treenode .p-treenode-content{
-  overflow: auto;
+  // overflow: auto;
+}
+
+.p-tree .p-tree-container .p-treenode .p-treenode-content:hover{
+  // background-color: red !important
+}
+.p-tree .p-tree-container .p-treenode .p-treenode-content.p-treenode-selectable:not(.p-highlight):hover {
+  width: fit-content;
 }
