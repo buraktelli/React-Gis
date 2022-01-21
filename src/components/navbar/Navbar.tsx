@@ -9,6 +9,7 @@ import { SelectButton } from 'primereact/selectbutton';
 import { Button } from 'primereact/button';
 import { visibleChange } from '../../state/features/sidebarSlice'
 import { tableVisibleChange } from '../../state/features/tableSlice'
+import { authenticatedChange } from '../../state/features/authenticatedSlice'
 import { useAppDispatch, useAppSelector } from '../../state/store/index'
 import ToolButton from '../../ui-components/ToolButton';
 import { useTranslation } from 'react-i18next';
@@ -19,6 +20,7 @@ export default function Navbar() {
 
     const sidebarVisibility = useAppSelector((state) => state.sidebar.visibility)
     const tableVisibility = useAppSelector((state) => state.table.visibility)
+    const isAuthenticated = useAppSelector((state) => state.authenticated.isAuthenticated)
     const dispatch = useAppDispatch()
 
     const start =
@@ -58,8 +60,22 @@ export default function Navbar() {
             </div>
         </div >
     const end =
-        <div>
+        <div className='end-group'>
             <Language></Language>
+            <Button
+                onClick={() => dispatch(authenticatedChange(false))}
+                label={
+                    t('BUTTON.Logout')
+                }
+                style={{
+                    marginLeft: '5px',
+                    backgroundColor: '#2a2c38',
+                    width: '115px',
+                    height: '45px',
+                    display: 'flex',
+                    justifyContent: 'center'
+                }}
+            />
         </div>
 
 

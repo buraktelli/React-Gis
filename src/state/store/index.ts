@@ -3,12 +3,14 @@ import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
 import sidebarSlice from "../features/sidebarSlice";
 import tableSlice from "../features/tableSlice";
 import servicesSlice from "../features/servicesSlice";
+import authenticatedSlice from "../features/authenticatedSlice";
 
 const store = configureStore({
     reducer: {
         sidebar: sidebarSlice,
         table: tableSlice,
-        services: servicesSlice
+        services: servicesSlice,
+        authenticated: authenticatedSlice
     }
 })
 

@@ -47,3 +47,10 @@
     width: 100% !important;
     border: none !important;
 }
+
+.end-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
