@@ -4,13 +4,15 @@ import sidebarSlice from "../features/sidebarSlice";
 import tableSlice from "../features/tableSlice";
 import servicesSlice from "../features/servicesSlice";
 import authenticatedSlice from "../features/authenticatedSlice";
+import dimensionsSlice from "../features/dimensionsSlice";
 
 const store = configureStore({
     reducer: {
         sidebar: sidebarSlice,
         table: tableSlice,
         services: servicesSlice,
-        authenticated: authenticatedSlice
+        authenticated: authenticatedSlice,
+        dimensions: dimensionsSlice
     }
 })
 

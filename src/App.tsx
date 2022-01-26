@@ -6,11 +6,23 @@ import SidebarComponent from './components/sidebar/SidebarComponent';
 import { useAppDispatch, useAppSelector } from './state/store'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from './components/login/Login';
+import { dimensionsChange } from './state/features/dimensionsSlice'
 
 
 function App() {
-  const sidebarVisibility = useAppSelector((state) => state.sidebar.visibility)
   const isAuthenticated = useAppSelector((state) => state.authenticated.isAuthenticated)
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    function handleResize() {
+      dispatch(dimensionsChange({
+        width: window.innerWidth,
+        height: window.innerHeight
+      }))
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <BrowserRouter>

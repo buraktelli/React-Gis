@@ -8,7 +8,9 @@ const languages = [
     { value: 'tr', label: 'TR', src: 'icons/tr.png' },
 ];
 export default function Language() {
-    const [language, setLanguage] = useState('tr')
+    const [language, setLanguage] = useState(
+        localStorage.getItem('userLanguage') ? localStorage.getItem('userLanguage') : 'tr'
+    )
     const { i18n } = useTranslation();
 
     const changeLanguage = (e: any) => {
