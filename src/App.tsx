@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from './state/store'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from './components/login/Login';
 import { dimensionsChange } from './state/features/dimensionsSlice'
+import { fullScreenModeChange, Mode } from './state/features/fullScreenSlice';
 
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
         width: window.innerWidth,
         height: window.innerHeight
       }))
+      dispatch(fullScreenModeChange(
+        window.innerWidth > 580 ? Mode.BOTH : Mode.MAP
+      ))
     }
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)

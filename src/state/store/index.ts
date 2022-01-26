@@ -5,6 +5,7 @@ import tableSlice from "../features/tableSlice";
 import servicesSlice from "../features/servicesSlice";
 import authenticatedSlice from "../features/authenticatedSlice";
 import dimensionsSlice from "../features/dimensionsSlice";
+import fullScreenSlice from "../features/fullScreenSlice";
 
 const store = configureStore({
     reducer: {
@@ -12,7 +13,8 @@ const store = configureStore({
         table: tableSlice,
         services: servicesSlice,
         authenticated: authenticatedSlice,
-        dimensions: dimensionsSlice
+        dimensions: dimensionsSlice,
+        fullScreenMode: fullScreenSlice
     }
 })
 

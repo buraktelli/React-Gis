@@ -13,13 +13,26 @@ import ToolButton from '../../ui-components/ToolButton';
 import { useTranslation } from 'react-i18next';
 import Language from '../util/language/Language';
 import { Dialog } from 'primereact/dialog';
+import { fullScreenModeChange, Mode } from '../../state/features/fullScreenSlice';
 
 export default function Navbar() {
     const { t } = useTranslation();
     const [displayDialog, setDisplayDialog] = useState(false);
 
+    const sidebarVisibility = useAppSelector((state) => state.sidebar.visibility)
+    const mode = useAppSelector((state) => state.fullScreenMode.mode)
+    const tableVisibility = useAppSelector((state) => state.table.visibility)
+    const isAuthenticated = useAppSelector((state) => state.authenticated.isAuthenticated)
+    const { width, height } = useAppSelector((state) => state.dimensions)
+    const dispatch = useAppDispatch()
+
     const dialogVisibleChange = () => {
         setDisplayDialog(!displayDialog)
+    }
+    const fullScreenChange = () => {
+        dispatch(fullScreenModeChange(
+            mode === Mode.MAP ? Mode.PANO : Mode.MAP
+        ))
     }
 
     const end =
@@ -43,18 +56,15 @@ export default function Navbar() {
     const responsiveEnd =
         <div className='end-group'>
             <ToolButton
-                icon='pi-bars'
+                svg='icons/fullscreen.svg'
+                onClick={fullScreenChange}
+            />
+            <ToolButton
+                icon='pi pi-fw pi-cog'
                 onClick={dialogVisibleChange}
             />
         </div>
-
-    const sidebarVisibility = useAppSelector((state) => state.sidebar.visibility)
-    const tableVisibility = useAppSelector((state) => state.table.visibility)
-    const isAuthenticated = useAppSelector((state) => state.authenticated.isAuthenticated)
-    const { width, height } = useAppSelector((state) => state.dimensions)
     const [endStyle, setEndStyle] = useState(width > 580 ? end : responsiveEnd)
-    const dispatch = useAppDispatch()
-
     useEffect(() => {
         if (width > 580) {
             setEndStyle(end)
@@ -62,7 +72,7 @@ export default function Navbar() {
             setEndStyle(responsiveEnd)
         }
         return () => { }
-    }, [width, t])
+    }, [width, t, mode])
 
     const start =
         <div className='start'>
