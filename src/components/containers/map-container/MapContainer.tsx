@@ -17,8 +17,9 @@ export default function MapContainer() {
 
     useEffect(() => {
         const v = new View({
-            center: [32, 41],
-            zoom: 2,
+            center: [3226637.665,5017831.872],
+            zoom: 12,
+            // projection: 'EPSG:4326'
             // minZoom: props.zoom - 1
         });
         const l = [
@@ -44,6 +45,7 @@ export default function MapContainer() {
     }, []);
 
     const mapClick = (event: MapBrowserEvent<any>) => {
+
     }
     return (
         <>

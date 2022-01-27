@@ -17,18 +17,18 @@ export default function PanoContainer() {
         const panogl = new PanoGL(ankapanapiOptions);
 
         (window as any).pano = panogl;
-        panogl.gotoLocation(0, 0)
+        panogl.gotoLocation(41.037201, 28.985391)
 
         panogl.start();
 
         panogl.addEvent(PanoGL.DATA_COMPLETE, null, panoCompleted);
 
         return () => {
-            
+
         }
     }, [])
     function panoCompleted() {
-        
+
     }
 
     return (

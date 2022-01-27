@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from 'axios'
-import { ILoginModel } from '../../util/login-model';
+import { ILoginModel, IUserModel } from '../../util/login-model';
 
 interface InitialState {
     isAuthenticated: boolean;
@@ -16,12 +16,14 @@ const initialState: InitialState = {
     error: ""
 }
 
-export const signIn = createAsyncThunk("signIn", async () => {
+export const signIn = createAsyncThunk("signIn", async (data: IUserModel, _thunkApi) => {
     const body = {
-        username: 'admin',
-        password: 'safranbolu2020'
+        username: data.username,
+        password: data.password
     }
     const response = await axios.post<ILoginModel>('https://dev-gis.ankageo.com/rest/v1/auth/login', body)
+    
+    
     return response.data;
 })
 
