@@ -21,9 +21,9 @@
         "Error Message": "Bağlantı Kopyalanamadı!"
     },
     "SIDEBAR": {
-        "Layers": "Katmanlar",
-        "Open Table": "Tablo aç",
-        "Draw Object": "Obje çiz"
+        "Layers": "Layers",
+        "Open Table": "Open Table",
+        "Draw Object": "Draw Object"
     },
     "BASEMAP": {
         "Standart Maps": "Standart Haritalar",

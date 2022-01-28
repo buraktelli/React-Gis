@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '../../state/store/index'
 import MapContainer from '../containers/map-container/MapContainer'
 import PanoContainer from '../containers/pano-container/PanoContainer'
 import { Mode } from '../../state/features/fullScreenSlice'
+import Table from '../../ui-components/Table';
 
 export default function BodyComponent() {
     const visibility = useAppSelector((state) => state.table.visibility)
@@ -59,7 +60,7 @@ export default function BodyComponent() {
                                 </Splitter>
                             </SplitterPanel>
                             <SplitterPanel className="p-d-flex p-ai-center p-jc-center" size={30}>
-                                Table
+                                <Table/>
                             </SplitterPanel>
                         </Splitter>
                     :
