@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from 'axios'
-import { ILoginModel, IUserModel } from '../../util/login-model';
+import { ILoginModel, IUserModel, ILoginErrorModel } from '../../util/login-model';
 
 interface InitialState {
     isAuthenticated: boolean;
@@ -16,15 +16,20 @@ const initialState: InitialState = {
     error: ""
 }
 
-export const signIn = createAsyncThunk("signIn", async (data: IUserModel, _thunkApi) => {
+export const signIn = createAsyncThunk("signIn", async (data: IUserModel, { rejectWithValue }) => {
     const body = {
         username: data.username,
         password: data.password
     }
-    const response = await axios.post<ILoginModel>('https://dev-gis.ankageo.com/rest/v1/auth/login', body)
-    
-    
-    return response.data;
+    try {
+        const response = await axios.post<ILoginModel>('https://dev-gis.ankageo.com/rest/v1/auth/login', body)
+        return response.data;
+    } catch (error: any) {
+        if (!error.response) {
+            throw error
+        }
+        return rejectWithValue(error.response.data)
+    }
 })
 
 const authenticatedSlice = createSlice({
@@ -50,9 +55,10 @@ const authenticatedSlice = createSlice({
             state.loading = false;
             state.error = "";
         })
-        builder.addCase(signIn.rejected, (state, action) => {
+        builder.addCase(signIn.rejected, (state, action: any) => {
+            const payload = action.payload
             state.loading = false;
-            state.error = action.error.message!
+            state.error = payload ? payload.message : action.error.message
             state.data = null;
         })
     }

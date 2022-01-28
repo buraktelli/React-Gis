@@ -1,15 +1,12 @@
 {
     "BUTTON": {
-        "Layers": "Katmanlar",
-        "Basemaps": "Haritalar",
-        "How Can I Go?": "Nasıl Giderim?",
-        "360° Campus": "360° Kampüs",
-        "3D Campus": "3B Kampüs",
+        "Layers": "Layers",
+        "Basemaps": "Maps",
         "Login": "Sign In",
         "Logout": "Log Out",
-        "Share": "Paylaş",
-        "Print": "Yazdır",
-        "Measurement": "Ölçüm",
+        "Share": "Share",
+        "Print": "Print",
+        "Measurement": "Measurement",
         "Settings": "Settings"
     },
     "SEARCH": {
@@ -38,10 +35,9 @@
         "Are you sure you want to permanently delete this object?": "Bu objeyi kalıcı olarak silmek istediğinize emin misiniz?"
     },
     "LOGIN": {
-        "University Information System": "Üniversite Bilgi Sistemi",
         "Username": "User Name",
-        "Password": "Şifre",
-        "Remember Me": "Beni Hatırla",
-        "Forgot Password": "Şifremi unuttum"
+        "Password": "Password",
+        "Remember Me": "Remember Me",
+        "Forgot Password": "Forgot My Password"
     }
 }

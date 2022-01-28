@@ -106,12 +106,12 @@ export default function Login() {
 
         <div className="flex justify-content-center">
             <div className="card">
-                <h5 className="text-center" style={{ fontSize: '25px' }}>Sign In</h5>
+                <h5 className="text-center" style={{ fontSize: '25px' }}>{t('BUTTON.Login')}</h5>
                 <form onSubmit={formik.handleSubmit} className="p-fluid">
                     <div className="field">
                         <span className="p-float-label">
                             <InputText id="username" name="username" value={formik.values.username} onChange={formik.handleChange} autoFocus className={classNames({ 'p-invalid': isFormFieldValid('username') })} />
-                            <label htmlFor="username" className={classNames({ 'p-error': isFormFieldValid('username') })}>Name*</label>
+                            <label htmlFor="username" className={classNames({ 'p-error': isFormFieldValid('username') })}>{t('LOGIN.Username')}</label>
                         </span>
                         {getFormErrorMessage('username')}
                     </div>
@@ -119,13 +119,13 @@ export default function Login() {
                         <span className="p-float-label">
                             <Password id="password" name="password" value={formik.values.password} onChange={formik.handleChange} toggleMask
                                 className={classNames({ 'p-invalid': isFormFieldValid('password') })} header={passwordHeader} footer={passwordFooter} />
-                            <label htmlFor="password" className={classNames({ 'p-error': isFormFieldValid('password') })}>Password*</label>
+                            <label htmlFor="password" className={classNames({ 'p-error': isFormFieldValid('password') })}>{t('LOGIN.Password')}</label>
                         </span>
                         {getFormErrorMessage('password')}
                     </div>
                     <div className="field-checkbox">
                         <Checkbox inputId="rememberMe" name="rememberMe" checked={formik.values.rememberMe} onChange={formik.handleChange} className={classNames({ 'p-invalid': isFormFieldValid('rememberMe') })} />
-                        <label htmlFor="rememberMe" className={classNames({ 'p-error': isFormFieldValid('rememberMe') })}>Remember Me...</label>
+                        <label htmlFor="rememberMe" className={classNames({ 'p-error': isFormFieldValid('rememberMe') })}>{t('LOGIN.Remember Me')}</label>
                     </div>
 
                     <Button type="submit" label={t('BUTTON.Login')} className="mt-2" style={{ marginTop: '10px' }} disabled={loading}/>
